@@ -19,10 +19,15 @@ router.post("/", async (req, res, next) => {
 
 router.delete("/:id",async(req,res,next)=>{
     try{
+        const id=req.params.id
+        console.log(id)
         const user=await hobbits.remove(req.params.id)
-        res.status(200).json({
-            message:"User succesfully deleted"
-        })
+        if(user){
+            res.status(200).json({
+                message:"User succesfully deleted"
+            })
+        }
+       
     }
     catch(err){
 

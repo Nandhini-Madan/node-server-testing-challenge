@@ -14,7 +14,7 @@ describe("hobbits integration Testing",()=>{
     })
     it ("post hobbits",async ()=>{
         const res=await superTest(server)
-                    .del("/hobbits/1")
+                    .del("/hobbits/5")
                 
                 expect(res.statusCode).toBe(200)
                 expect(res.type).toBe("application/json")
